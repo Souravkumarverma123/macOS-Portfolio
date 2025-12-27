@@ -1,0 +1,17 @@
+{
+    "version": 1.1,
+    "atDirectives": [
+        {
+            "name": "@theme",
+            "description": "Tailwind CSS v4 theme configuration directive for defining design tokens"
+        },
+        {
+            "name": "@utility",
+            "description": "Tailwind CSS v4 utility directive for creating custom utility classes"
+        },
+        {
+            "name": "@apply",
+            "description": "Tailwind CSS directive to apply utility classes within CSS rules"
+        }
+    ]
+}
