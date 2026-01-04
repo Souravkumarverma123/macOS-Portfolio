@@ -1,4 +1,4 @@
-import { dockApps } from "./constants";
+import { dockApps } from "#constants";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -7,7 +7,7 @@ import useWindowStore from "../store/window";
 
 
 const Dock = () => {
-    const {openWindow, closeWindow, windows} = useWindowStore();
+    const { openWindow, closeWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
     useGSAP(() => {
         const dock = dockRef.current;
@@ -62,7 +62,7 @@ const Dock = () => {
 
         if (!window) {
             console.error(`window not found  for app: ${app.id}`);
-            
+
         }
 
         if (window.isOpen) {
@@ -70,8 +70,8 @@ const Dock = () => {
         } else {
             openWindow(app.id);
         }
-        
-     }
+
+    }
     return (
         <section id="dock">
             <div ref={dockRef} className="dock-container">

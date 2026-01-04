@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url'
 
 export default defineConfig({
   plugins: [react(),
-    tailwindcss(),
+  tailwindcss(),
   ],
   resolve: {
     alias: {
