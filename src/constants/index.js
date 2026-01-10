@@ -188,19 +188,19 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/friends.png",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/sourav3.png",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
+    img: "/images/pexels.jpg",
   },
   {
     id: 4,
-    img: "/images/gal4.png",
+    img: "/images/images.png",
   },
 ];
 
@@ -229,7 +229,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] left-5", // optional: Finder window position
+      windowPosition: "top-[50vh] rigth-7", // optional: Finder window position
       children: [
         {
           id: 1,
@@ -406,7 +406,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
+      imageUrl: "/images/sourav-2.png",
     },
     {
       id: 3,
@@ -431,7 +431,7 @@ const ABOUT_LOCATION = {
         "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
         "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
         "I love to write clean code that actually goes to production and used in real life",
-        "Outside of dev work, i love to watch movies, webshows and also love play cricket😅",
+        "Outside of dev work, i love to watch movies, webshows and also love to play cricket😅",
       ],
     },
   ],
@@ -446,7 +446,7 @@ const RESUME_LOCATION = {
   children: [
     {
       id: 1,
-      name: "Resume.pdf",
+      name: "my_resume.pdf",
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
