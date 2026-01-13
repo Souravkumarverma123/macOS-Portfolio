@@ -77,10 +77,10 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "jan 4, 2025",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
+      "Why Version Control Exists: The Pendrive Problem",
+    image: "/images/git.png",
     link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
   },
   {
@@ -136,10 +136,10 @@ const socials = [
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
+    text: "Instagram",
+    icon: "/icons/instagram.svg",
     bg: "#4bcb63",
-    link: "https://google.com",
+    link: "https://www.instagram.com/sourav7534kumar/",
   },
   {
     id: 3,
