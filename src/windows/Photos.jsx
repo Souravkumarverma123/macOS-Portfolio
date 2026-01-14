@@ -26,7 +26,7 @@ const Photos = () => {
                     <ul>
                         {photosLinks.map(({ id, icon, title }) => (
                             <li key={id}>
-                                <img src={icon} alt={title} />
+                                <img src={icon} alt={title} loading="lazy" />
                                 <p>{title}</p>
                             </li>
                         ))}
@@ -46,7 +46,7 @@ const Photos = () => {
                                     imageUrl: img,
                                 })}
                             >
-                                <img src={img} alt={`Gallery image ${id}`} />
+                                <img src={img} alt={`Gallery image ${id}`} loading="lazy" />
                             </li>
                         ))}
                     </ul>

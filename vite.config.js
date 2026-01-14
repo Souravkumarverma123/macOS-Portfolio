@@ -18,4 +18,16 @@ export default defineConfig({
       '#windows': resolve(dirname(fileURLToPath(import.meta.url)), 'src/windows'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'gsap-vendor': ['gsap', '@gsap/react'],
+          'pdf-vendor': ['react-pdf', 'pdfjs-dist'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+  },
 })

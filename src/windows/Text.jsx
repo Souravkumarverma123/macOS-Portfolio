@@ -23,6 +23,7 @@ const Text = () => {
                         src={image}
                         alt={name}
                         className="w-32 h-32 rounded-lg object-cover mx-auto"
+                        loading="lazy"
                     />
                 )}
 
