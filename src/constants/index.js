@@ -80,7 +80,7 @@ const blogPosts = [
     date: "jan 4, 2025",
     title:"Why Version Control Exists: The Pendrive Problem",
     image: "/images/git.png",
-    link: "https://hashnode.com/@Sourav770",
+    link: "https://my-webdev-cohort-blogs.hashnode.dev/why-version-control-exists-the-pendrive-problem",
   },
   {
     id: 2,
