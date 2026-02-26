@@ -4,6 +4,10 @@ A stunning, interactive portfolio website that replicates the macOS Big Sur inte
 
 ![macOS Portfolio](public/macbook.png)
 
+## 🎬 Demo
+
+https://github.com/Souravkumarverma123/macOS-Portfolio/blob/main/promo.mp4
+
 ## ✨ Features
 
 ### 🎨 **Authentic macOS Experience**
