@@ -11,6 +11,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: filter 0.4s ease;
+}
+
+html.dark body {
+  filter: brightness(0.5) saturate(1.2);
 }
 
 @theme {
@@ -67,13 +72,124 @@ body {
   }
 
   #welcome {
-    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
+    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:static max-sm:translate-x-0 max-sm:translate-y-0 max-sm:w-full max-sm:min-h-screen max-sm:block;
 
-    .small-screen {
-      @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
+    &>p,
+    &>h1 {
+      @apply max-sm:hidden;
+    }
+
+    .mobile-portfolio {
+      @apply hidden max-sm:block w-full min-h-screen overflow-y-auto px-5 pb-10;
+    }
+
+    .mobile-hero {
+      @apply text-center py-10 space-y-3;
+
+      .mobile-avatar {
+        @apply w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-white/30;
+      }
+
+      h1 {
+        @apply text-2xl font-bold text-white;
+      }
+
+      .mobile-tagline {
+        @apply text-blue-300 font-medium text-sm;
+      }
+
+      .mobile-bio {
+        @apply text-gray-300 text-sm max-w-xs mx-auto leading-relaxed;
+      }
+    }
+
+    .mobile-section {
+      @apply mb-8;
+
+      h2 {
+        @apply text-lg font-bold text-white mb-4 border-b border-white/10 pb-2;
+      }
+    }
+
+    .mobile-projects {
+      @apply space-y-4;
+    }
+
+    .mobile-project-card {
+      @apply bg-white/10 backdrop-blur-md rounded-xl overflow-hidden;
+
+      img {
+        @apply w-full h-40 object-cover;
+      }
+
+      .mobile-project-info {
+        @apply p-4 flex items-center justify-between;
+
+        h3 {
+          @apply text-white font-semibold text-sm flex-1;
+        }
+
+        a {
+          @apply text-blue-300 text-xs flex items-center gap-1 hover:text-blue-200;
+        }
+      }
+    }
+
+    .mobile-skills {
+      @apply space-y-4;
+    }
+
+    .mobile-skill-group {
+      h4 {
+        @apply text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2;
+      }
+
+      .mobile-skill-pills {
+        @apply flex flex-wrap gap-2;
+
+        span {
+          @apply bg-white/10 backdrop-blur-md text-gray-200 text-xs px-3 py-1.5 rounded-full;
+        }
+      }
+    }
+
+    .mobile-blogs {
+      @apply space-y-3;
+    }
+
+    .mobile-blog-card {
+      @apply block bg-white/10 backdrop-blur-md rounded-lg p-4 hover:bg-white/15 transition-colors;
+
+      .mobile-blog-date {
+        @apply text-gray-400 text-xs mb-1;
+      }
+
+      h3 {
+        @apply text-white text-sm font-medium;
+      }
+    }
+
+    .mobile-socials {
+      @apply grid grid-cols-2 gap-3;
+    }
+
+    .mobile-social-btn {
+      @apply flex items-center gap-3 p-3 rounded-lg text-white text-sm font-medium;
+
+      img {
+        @apply size-5;
+      }
+    }
+
+    .mobile-resume-btn {
+      @apply w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold transition-colors;
+    }
+
+    .mobile-footer {
+      @apply text-center py-8;
 
       p {
-        @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
+        @apply text-gray-400 text-sm;
       }
     }
   }
@@ -86,7 +202,7 @@ body {
     }
 
     .tooltip {
-      @apply py-1! px-3! w-fit! text-center! text-xs! rounded-md! bg-blue-200! text-blue-900! shadow-2xl!;
+      @apply py-1 px-3 w-fit text-center text-xs rounded-md bg-blue-200 text-blue-900 shadow-2xl;
     }
 
     .dock-icon {
@@ -215,11 +331,23 @@ body {
       @apply font-bold text-sm text-center w-full;
     }
 
-    h3 {
-      @apply text-xl font-semibold;
+    .contact-body {
+      @apply p-5 space-y-5 max-h-[70vh] overflow-y-auto;
     }
 
-    ul {
+    .contact-intro {
+      @apply space-y-2;
+
+      h3 {
+        @apply text-xl font-semibold;
+      }
+
+      .email {
+        @apply text-sm text-gray-500 font-medium;
+      }
+    }
+
+    .social-links {
       @apply flex items-center gap-3;
 
       li {
@@ -232,6 +360,35 @@ body {
         p {
           @apply font-semibold text-sm text-white;
         }
+      }
+    }
+
+    .contact-form {
+      @apply space-y-3 border-t border-gray-200 pt-5;
+
+      h4 {
+        @apply text-sm font-semibold text-gray-600;
+      }
+
+      .form-row {
+        @apply flex gap-3;
+      }
+
+      input,
+      textarea {
+        @apply w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all placeholder:text-gray-400;
+      }
+
+      textarea {
+        @apply resize-none;
+      }
+
+      button {
+        @apply flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed;
+      }
+
+      .form-error {
+        @apply text-red-500 text-xs;
       }
     }
   }
@@ -302,6 +459,22 @@ body {
     #window-header {
       h2 {
         @apply font-bold text-sm text-center flex-1;
+      }
+    }
+
+    .resume-body {
+      @apply relative min-h-40;
+    }
+
+    .resume-loading {
+      @apply absolute inset-0 flex-center flex-col gap-3 text-gray-400 bg-white z-10;
+    }
+
+    .resume-error {
+      @apply flex-center flex-col gap-3 text-red-400 p-10;
+
+      button {
+        @apply bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg transition-colors;
       }
     }
   }
@@ -391,6 +564,298 @@ body {
           @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
         }
       }
+    }
+  }
+
+  .context-menu {
+    @apply fixed z-[9999] min-w-52 bg-white/80 backdrop-blur-xl rounded-lg shadow-2xl border border-gray-200/50 overflow-hidden py-1;
+
+    ul {
+      @apply space-y-0;
+    }
+
+    li {
+      @apply flex items-center justify-between px-4 py-1.5 text-sm text-gray-700 cursor-pointer transition-colors;
+
+      &:hover:not(.separator):not(.disabled) {
+        @apply bg-blue-500 text-white;
+
+        .shortcut {
+          @apply text-blue-100;
+        }
+      }
+
+      &.separator {
+        @apply h-px bg-gray-200 my-1 px-0 cursor-default;
+      }
+
+      &.disabled {
+        @apply text-gray-400 cursor-not-allowed;
+      }
+
+      .menu-icon {
+        @apply mr-2;
+      }
+
+      .shortcut {
+        @apply text-xs text-gray-400 ml-8;
+      }
+    }
+  }
+
+  .snap-indicator {
+    @apply fixed z-[9990] bg-blue-400/20 border-2 border-blue-400/40 rounded-lg pointer-events-none;
+    animation: snapPulse 1s ease-in-out infinite;
+  }
+}
+
+@keyframes snapPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ======================== DARK MODE ======================== */
+
+@layer components {
+
+  :global(html.dark) nav,
+  html.dark nav {
+    @apply bg-gray-900/70 text-gray-200;
+
+    time {
+      @apply text-gray-300;
+    }
+
+    p {
+      @apply text-gray-200;
+    }
+
+    ul p {
+      @apply hover:text-white;
+    }
+
+    img {
+      @apply invert;
+    }
+  }
+
+  html.dark #dock .dock-container {
+    @apply bg-gray-900/50 backdrop-blur-xl;
+  }
+
+  html.dark #dock .tooltip {
+    @apply bg-gray-800 text-gray-200;
+  }
+
+  html.dark #window-header {
+    @apply bg-gray-800 border-gray-700 text-gray-400;
+  }
+
+  html.dark #terminal {
+    @apply bg-gray-900 text-gray-200;
+
+    h2 {
+      @apply text-gray-200;
+    }
+
+    .techstack {
+      .label {
+        @apply text-gray-400;
+      }
+
+      .content {
+        @apply border-gray-700;
+      }
+
+      .footnote p.text-black {
+        @apply text-gray-200;
+      }
+    }
+  }
+
+  html.dark #safari {
+    @apply bg-gray-900;
+
+    .search {
+      @apply bg-gray-800 border-gray-600;
+
+      input {
+        @apply bg-transparent text-gray-200 placeholder:text-gray-500;
+      }
+    }
+
+    .blog {
+      @apply bg-gray-900;
+
+      h2 {
+        @apply text-pink-400;
+      }
+
+      .blog-post .content {
+        p {
+          @apply text-gray-400;
+        }
+
+        h3 {
+          @apply text-gray-200;
+        }
+
+        a {
+          @apply text-blue-400;
+        }
+      }
+    }
+  }
+
+  html.dark #contact {
+    @apply bg-gray-900 text-gray-200;
+
+    h2 {
+      @apply text-gray-200;
+    }
+
+    h3 {
+      @apply text-gray-100;
+    }
+
+    p {
+      @apply text-gray-300;
+    }
+  }
+
+  html.dark #photos {
+    @apply bg-gray-900;
+
+    .sidebar {
+      @apply bg-gray-800 border-gray-700;
+
+      h2 {
+        @apply text-gray-500;
+      }
+
+      ul li {
+        @apply text-gray-300;
+
+        &:first-child {
+          @apply bg-blue-900/50 text-blue-300;
+        }
+      }
+    }
+  }
+
+  html.dark #resume {
+    @apply bg-gray-900;
+  }
+
+  html.dark #finder {
+    @apply bg-gray-900;
+
+    .sidebar {
+      @apply bg-gray-800 border-gray-700;
+
+      h3 {
+        @apply text-gray-500;
+      }
+
+      ul {
+        .active {
+          @apply bg-blue-900/50 text-blue-300;
+        }
+
+        .not-active {
+          @apply text-gray-300 hover:bg-gray-700;
+        }
+      }
+    }
+
+    .content {
+      @apply bg-gray-900;
+
+      li p {
+        @apply text-gray-200;
+      }
+    }
+  }
+
+  html.dark #txtfile {
+    @apply bg-gray-900;
+
+    h2 {
+      @apply text-gray-200;
+    }
+
+    .text-gray-700 {
+      @apply text-gray-300;
+    }
+
+    .text-gray-600 {
+      @apply text-gray-400;
+    }
+  }
+
+  html.dark #imgfile {
+    @apply bg-gray-900;
+
+    .preview {
+      @apply bg-gray-800;
+    }
+  }
+
+  html.dark .icon {
+    @apply hover:bg-gray-700;
+  }
+
+  html.dark #welcome .mobile-portfolio {
+    .mobile-hero h1 {
+      @apply text-gray-100;
+    }
+  }
+
+  html.dark .context-menu {
+    @apply bg-gray-800/90 border-gray-700/50;
+
+    li {
+      @apply text-gray-300;
+
+      &:hover:not(.separator):not(.disabled) {
+        @apply bg-blue-600 text-white;
+      }
+
+      &.separator {
+        @apply bg-gray-700;
+      }
+
+      .shortcut {
+        @apply text-gray-500;
+      }
+    }
+  }
+
+  html.dark #contact {
+    .contact-form {
+      @apply border-gray-700;
+
+      h4 {
+        @apply text-gray-400;
+      }
+
+      input,
+      textarea {
+        @apply bg-gray-800 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-900;
+      }
+    }
+  }
+
+  html.dark #resume {
+    .resume-loading {
+      @apply bg-gray-900 text-gray-400;
     }
   }
 }
