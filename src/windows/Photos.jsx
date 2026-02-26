@@ -58,4 +58,4 @@ const Photos = () => {
 
 const PhotosWindow = WindowWrapper(Photos, "photos")
 
-export default PhotosWindow
+export default PhotosWindow;
