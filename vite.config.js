@@ -6,6 +6,9 @@ import { fileURLToPath } from 'url'
 
 
 export default defineConfig({
+  // Expose both VITE_-prefixed vars (the default) and WEB3FORMS_-prefixed
+  // vars to client code via import.meta.env.
+  envPrefix: ['VITE_', 'WEB3FORMS_'],
   plugins: [react(),
   tailwindcss(),
   ],

@@ -325,46 +325,92 @@ html.dark body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-[420px] absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
 
     .contact-body {
-      @apply p-5 space-y-5 max-h-[70vh] overflow-y-auto;
+      @apply p-6 space-y-6 max-h-[75vh] overflow-y-auto;
     }
 
     .contact-intro {
-      @apply space-y-2;
+      @apply flex flex-col items-center text-center gap-2;
 
-      h3 {
-        @apply text-xl font-semibold;
+      .avatar {
+        @apply size-16 rounded-full object-cover ring-4 ring-gray-100;
       }
 
-      .email {
-        @apply text-sm text-gray-500 font-medium;
+      .availability {
+        @apply flex items-center gap-1.5 text-xs font-medium text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full mt-1;
+
+        .dot {
+          @apply size-1.5 rounded-full bg-emerald-500 animate-pulse;
+        }
+      }
+
+      h3 {
+        @apply text-xl font-semibold mt-1;
+      }
+
+      p {
+        @apply text-sm text-gray-500 leading-relaxed max-w-xs;
+      }
+
+      .email-chip {
+        @apply flex items-center gap-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-medium text-gray-600 transition-colors mt-1 cursor-pointer;
+
+        .copied {
+          @apply text-emerald-500;
+        }
       }
     }
 
     .social-links {
-      @apply flex items-center gap-3;
+      @apply flex items-center justify-center gap-4;
 
       li {
-        @apply rounded-lg p-3 w-60 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300;
+        @apply flex flex-col items-center gap-1.5;
 
         a {
-          @apply space-y-5;
+          @apply flex-center size-10 rounded-full bg-gray-100 text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand)] hover:text-white hover:shadow-lg;
+
+          img {
+            @apply invert-0 opacity-70 transition-opacity;
+            filter: brightness(0) saturate(100%) invert(40%);
+          }
+        }
+
+        a:hover img {
+          @apply opacity-100;
+          filter: brightness(0) saturate(100%) invert(100%);
         }
 
         p {
-          @apply font-semibold text-sm text-white;
+          @apply text-[11px] font-medium text-gray-400;
         }
       }
     }
 
+    .form-success {
+      @apply flex flex-col items-center text-center gap-2 border-t border-gray-200 pt-6 text-emerald-500;
+
+      h4 {
+        @apply text-base font-semibold text-gray-800;
+      }
+
+      p {
+        @apply text-sm text-gray-500 max-w-xs;
+      }
+
+      button {
+        @apply mt-2 text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors cursor-pointer;
+      }
+    }
+
     .contact-form {
-      @apply space-y-3 border-t border-gray-200 pt-5;
+      @apply space-y-4 border-t border-gray-200 pt-6;
 
       h4 {
         @apply text-sm font-semibold text-gray-600;
@@ -372,6 +418,14 @@ html.dark body {
 
       .form-row {
         @apply flex gap-3;
+      }
+
+      .field {
+        @apply flex-1 flex flex-col gap-1.5;
+      }
+
+      .field-label {
+        @apply flex items-center gap-1.5 text-xs font-medium text-gray-400;
       }
 
       input,
@@ -383,12 +437,12 @@ html.dark body {
         @apply resize-none;
       }
 
-      button {
-        @apply flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed;
+      button[type="submit"] {
+        @apply flex items-center justify-center gap-2 w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed;
       }
 
       .form-error {
-        @apply text-red-500 text-xs;
+        @apply flex items-center gap-1.5 text-red-500 text-xs;
       }
     }
   }
@@ -728,6 +782,32 @@ html.dark body {
     p {
       @apply text-gray-300;
     }
+
+    .contact-intro {
+      .avatar {
+        @apply ring-gray-700;
+      }
+
+      .availability {
+        @apply bg-emerald-500/10 text-emerald-400;
+      }
+
+      p {
+        @apply text-gray-400;
+      }
+
+      .email-chip {
+        @apply bg-gray-800 hover:bg-gray-700 border-gray-700 text-gray-300;
+      }
+    }
+
+    .social-links li p {
+      @apply text-gray-500;
+    }
+
+    .social-links li a {
+      @apply bg-gray-800 text-gray-400;
+    }
   }
 
   html.dark #photos {
@@ -846,9 +926,25 @@ html.dark body {
         @apply text-gray-400;
       }
 
+      .field-label {
+        @apply text-gray-500;
+      }
+
       input,
       textarea {
         @apply bg-gray-800 border-gray-600 text-gray-200 placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-900;
+      }
+    }
+
+    .form-success {
+      @apply border-gray-700;
+
+      h4 {
+        @apply text-gray-100;
+      }
+
+      p {
+        @apply text-gray-400;
       }
     }
   }
