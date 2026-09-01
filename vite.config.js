@@ -24,6 +24,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'gsap-vendor': ['gsap', '@gsap/react'],
+          'pdf-vendor': ['react-pdf', 'pdfjs-dist'],
         }
       }
     },
