@@ -463,19 +463,15 @@ html.dark body {
     }
 
     .resume-body {
-      @apply relative min-h-40;
+      @apply relative w-[min(70vw,650px)] h-[min(80vh,820px)];
     }
 
     .resume-loading {
       @apply absolute inset-0 flex-center flex-col gap-3 text-gray-400 bg-white z-10;
     }
 
-    .resume-error {
-      @apply flex-center flex-col gap-3 text-red-400 p-10;
-
-      button {
-        @apply bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-lg transition-colors;
-      }
+    .resume-frame {
+      @apply w-full h-full border-0;
     }
   }
 

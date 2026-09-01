@@ -87,14 +87,14 @@ const blogPosts = [
     date: "Aug 28, 2025",
     title: "Inside Git: How It Works and the Role of the .git Folder",
     image: "/images/git.png",
-    link: "https://hashnode.com/@Sourav770",
+    link: "https://my-webdev-cohort-blogs.hashnode.dev/inside-git-how-it-works-and-the-role-of-the-git-folder?utm_source=hashnode&utm_medium=feed",
   },
   {
     id: 3,
     date: "Aug 15, 2025",
-    title: "Git for Beginners: Basics and Essential Commands",
+    title: "Unnderstanding javascript Promises Methods — With Relatable Real-Life Analogies",
     image: "/images/git.png",
-    link: "https://hashnode.com/@Sourav770",
+    link: "https://learningthetech.hashnode.dev/unnderstanding-javascript-promises-methods-with-relatable-real-life-analogies?utm_source=hashnode&utm_medium=feed",
   },
 ];
 
@@ -113,11 +113,11 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "jwt", "MongoDB"],
+    items: ["Node.js", "Express", "jwt"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["MongoDB","MySQL", "PostgreSQL"],
   },
   {
     category: "Dev Tools",
@@ -227,7 +227,7 @@ const WORK_LOCATION = {
       name: "Ultrahuman",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5", // icon position inside Finder
+      position: "top-10 left-4", // icon position inside Finder
       windowPosition: "top-[50vh] rigth-7", // optional: Finder window position
       children: [
         {
@@ -239,7 +239,7 @@ const WORK_LOCATION = {
           position: "top-5 left-10",
           description: [
             "Ultrahuman replaces the context switching between your inbox and calendar with a unified experience augmented by an AI agent.",
-            "Instead of manually triaging emails, scheduling meetings, and hunting through threads, you interact with a conversational orchestrator that understands your Gmail and Google Calendar context.",
+            "Instead of manually triaging emails, scheduling meetings, and hunting through threads, you interact with a conversational orchestrator that understands your Gmail and Google Calendar context and makes your daily life easy by automating your gmail and calendar workflows",
           ],
         },
         {
@@ -287,7 +287,7 @@ const WORK_LOCATION = {
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
-          position: "top-5 right-10",
+          position: "top-6 right-10",
           description: [
             "SpaceForm is a blazing-fast, high-conversion SaaS form builder application.",
             "It is a TypeScript monorepo built with tRPC, Next.js, and Express, managed with Turborepo and pnpm.",
