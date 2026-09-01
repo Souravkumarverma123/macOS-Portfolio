@@ -33,6 +33,7 @@ const WindowWrapper = (Component, windowKey) => {
             const el = ref.current;
             if (!el) return;
             const [instance] = Draggable.create(el, {
+                dragClickables: false, // let clicks on inputs/buttons/links/etc. behave normally instead of starting a drag
                 onPress: () => focusWindow(windowKey),
                 onDrag() {
                     const x = this.pointerX;
